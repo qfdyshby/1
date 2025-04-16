@@ -1,0 +1,280 @@
+    body {
+      font-family: 'Play', sans-serif;
+      background-color: #2d2145;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+      color: #e8e0f5;
+      position: relative;
+      user-select: none;
+    }
+    header {
+      position: fixed;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      animation: headerAnimation 1s ease-in-out forwards;
+    }
+    @keyframes headerAnimation {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+    }
+    .header-button {
+      background: linear-gradient(to right, #2d2145 2%, #483663 50%, #2d2145 98%);
+      color: #a08fbd;
+      border: none;
+      padding: 6px 150px;
+      font-size: 24px;
+      font-family: 'Play', sans-serif;
+      cursor: pointer;
+      margin: 0 30px;
+      border-radius: 20px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .header-button:hover,
+    .header-button.active-button {
+      background: linear-gradient(to right, #2d2145 2%, #554270 50%, #2d2145 98%);
+      color: #e8e0f5;
+    }
+    .movie-details-container {
+      background-color: #362a51;
+      padding: 40px;
+      border-radius: 20px;
+      width: 85%;
+      max-width: 900px;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      position: relative;
+      margin-top: 80px;
+      margin-bottom: 60px;
+      gap: 30px;
+      box-shadow: none;
+      border: 1px solid #483663;
+      opacity: 0;
+      animation: containerFadeIn 2.5s ease-in-out forwards;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+    @keyframes containerFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .movie-cover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      align-self: flex-start;
+    }
+    .movie-cover img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      filter: brightness(90%) grayscale(15%);
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .watch-button {
+      padding: 6px 16px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #DED6EB;
+      background: linear-gradient(to right, #f97316, #f43f5e);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.3s, transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 300px;
+      margin-top: 15px;
+      text-align: center;
+      opacity: 0.75;
+      font-family: 'Play', sans-serif;
+      user-select: text;
+      -webkit-user-drag: none;
+    }
+    .watch-button:hover {
+      opacity: 1;
+      transform: scale(1.05);
+      background: linear-gradient(to right, #f97316, #f43f5e);
+      color: #e8e0f5;
+    }
+    .watch-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(245, 59, 94, 0.6);
+    }
+      .movie-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #e8e0f5;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      }
+      .movie-info {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        user-select: none;
+      }
+      .movie-info p {
+        font-size: 1.1rem;
+        color: #a08fbd;
+        margin: 8px 0;
+        display: inline;
+      }
+      .movie-info p strong {
+        color: #e8e0f5;
+        background-color: #483663;
+        padding: 2px 5px;
+      }
+      .movie-synopsis {
+        text-align: left;
+        font-size: 1.1rem;
+        color: #a08fbd;
+        margin-top: 13px;
+        line-height: 1.6;
+      }
+      .imdb-link img {
+        margin-top: -15px;
+        width: 48px;
+        height: 48px;
+        -webkit-user-drag: none;
+      }
+      @media (max-width: 1200px) {
+        .movie-details-container {
+          width: 90%;
+          padding: 27px;
+          margin-top: 100px;
+        }
+        .movie-title {
+          font-size: 1.9rem;
+        }
+        .header-button {
+          padding: 6px 140px;
+          font-size: 22px;
+        }
+        .watch-button {
+          padding: 6px 16px;
+          font-size: 1.1rem;
+        }
+        .imdb-link img {
+          width: 46px;
+          height: 46px;
+        }
+      }
+      @media (max-width: 800px) {
+        .movie-cover {
+          width: 100%;
+          text-align: center;
+        }
+        .movie-cover img {
+          width: 200px;
+          height: 300px;
+          margin: 0 auto;
+        }
+        .watch-button {
+          padding: 6px 8px;
+          font-size: 0.9rem;
+        }
+        .movie-details-container {
+          width: 80%;
+          flex-direction: column;
+          gap: 20px;
+          padding: 20px;
+          margin-top: 100px;
+        }
+        .movie-title {
+          font-size: 1.6rem;
+        }
+        .movie-info p {
+          font-size: 0.9rem;
+        }
+        .movie-synopsis {
+          font-size: 0.9rem;
+        }
+        .header-button {
+          padding: 6px 100px;
+          font-size: 20px;
+          margin: 0 15px;
+        }
+        .imdb-link img {
+          width: 44px;
+          height: 44px;
+        }
+      }
+      @media (max-width: 500px) {
+        .movie-cover img {
+          width: 200px;
+          height: 300px;
+        }
+        .watch-button {
+          padding: 6px 8px;
+          font-size: 0.9rem;
+        }
+        .movie-details-container {
+          width: 80%;
+          flex-direction: column;
+          gap: 20px;
+          padding: 20px;
+          margin-top: 100px;
+          margin-bottom: 100px;
+        }
+        .movie-title {
+          font-size: 1.6rem;
+        }
+        .movie-info p {
+          font-size: 0.9rem;
+        }
+        .movie-synopsis {
+          font-size: 0.9rem;
+        }
+        .header-button {
+          padding: 6px 100px;
+          font-size: 20px;
+          margin: 0 15px;
+        }
+        .imdb-link img {
+          width: 42px;
+          height: 42px;
+        }
+      }
+      .movie-details-container::-webkit-scrollbar {
+        display: none;
+      }
+      .movie-details-container {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      :focus {
+        outline: none;
+      }
