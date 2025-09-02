@@ -8,17 +8,19 @@
     box-sizing: border-box;
     user-select: none;
 }
-body,
-html {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Play', sans-serif;
-    color: #e8e0f5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000;
+  min-height: 100svh;
+  min-height: 100vh;
+  overflow-y: hidden;
+  font-family: 'Play', sans-serif;
+  color: #e8e0f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
 }
 .stars {
     position: fixed;
@@ -338,7 +340,6 @@ body {
     .wrap {
     width: 100%;
     max-width: 400px;
-    max-height: 700px;
 }
     .btn {
         width: 52px;
