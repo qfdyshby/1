@@ -337,7 +337,8 @@ body {
 @media (max-width:480px) {
     .wrap {
     width: 100%;
-    max-width: 380px;
+    max-width: 400px;
+    max-height: 700px;
 }
     .btn {
         width: 52px;
